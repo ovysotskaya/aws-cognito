@@ -1,6 +1,6 @@
 module.exports = {
   dashboard: '/dashboard',
-  signIn: '/sign-in',
-  signUp: '/',
+  signIn: '/',
+  signUp: '/sign-up',
   emailConfirmation: '/confirmation-email',
 };

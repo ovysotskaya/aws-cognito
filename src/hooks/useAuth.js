@@ -24,8 +24,10 @@ const useProvideAuth = () => {
 
     useEffect(() => {
         Auth.currentAuthenticatedUser()
-            .then((result) => {
-                setEmail(result.email);
+            .then(({ attributes: { email, given_name: firstName, family_name: lastName }}) => {
+                setEmail(email);
+                setFirstName(firstName);
+                setLastName(lastName)
                 setIsAuthenticated(true);
                 setIsLoading(false);
             })

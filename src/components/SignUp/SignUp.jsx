@@ -77,6 +77,7 @@ const SignUp = () => {
                                 label="Password"
                                 name="Password"
                                 autoComplete="Password"
+                                type="password"
                                 onChange={(e) => setPassword(e.target.value)}
                             />
                         </Grid>
