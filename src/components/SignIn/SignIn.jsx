@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { useNavigate } from "react-router-dom";
 import { Box, Button, Container, Grid, Link, TextField, Typography } from "@mui/material";
 import routes from "../../constants/routes";
-import {useAuth} from "../../hooks/useAuth";
+import { useAuth } from "../../hooks/useAuth";
 
 const SignIn = () => {
     const auth = useAuth();
@@ -14,7 +14,7 @@ const SignIn = () => {
         event.preventDefault();
         const result = await auth.signIn(email, password);
         if (result.success) {
-            navigate({ pathname: routes.dashboard });
+            navigate(routes.dashboard);
         } else {
             alert(result.message);
         }

@@ -4,15 +4,17 @@ import { AwsConfigAuth } from "../config/auth";
 
 Amplify.configure({ Auth: AwsConfigAuth });
 
-const authContext = createContext({});
+const AuthContext = createContext({});
+
+export default AuthContext;
 
 export const ProvideAuth = ({ children }) => {
     const auth = useProvideAuth();
-    return <authContext.Provider value={auth}>{children}</authContext.Provider>;
+    return <AuthContext.Provider value={auth}>{children}</AuthContext.Provider>;
 };
 
 export const useAuth = () => {
-    return useContext(authContext);
+    return useContext(AuthContext);
 };
 
 const useProvideAuth = () => {
